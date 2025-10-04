@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(90deg, #F4E1D2 0%, #FAF9F6 100%);
+}
+
+.hero-content {
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero h1 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #3D3D3D;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero .accent {
+  color: #E07A5F;
+  font-weight: 700;
+}
+
+.hero p {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #3D3D3D;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-accent {
+  background: #E07A5F;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 4px 16px #E07A5F33;
+  transition: background 0.2s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-accent:hover {
+  background: #D3684E;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background: #FAF9F6;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.navbar-logo img {
+  height: 32px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  color: #3D3D3D;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-image img {
+    margin-top: 2rem;
+    max-width: 260px;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .navbar-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
