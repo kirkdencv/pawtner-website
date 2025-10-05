@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap');
 
+
+/* Hero Section Styles */
 .hero {
   display: flex;
   align-items: center;
@@ -279,6 +281,8 @@
   border-color: #D3684E;
 }
 
+/* Coexistence Section - Home Styles */
+
 .coexistence {
   background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);
   padding: 3rem 2rem 3rem 2rem;
@@ -379,6 +383,136 @@
   align-self: flex-start;
 }
 
+.donate {
+  background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);
+  padding: 3rem 2rem 3rem 2rem;
+  text-align: center;
+}
+
+.donate h2 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #26453E;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.donate p {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #26453E;
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donate-options {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.donate-card {
+  background: #F8F6F2;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px #D9CAB3;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: box-shadow 0.2s;
+}
+
+.donate-card.highlight {
+  background: #E07A5F;
+  color: #fff;
+  box-shadow: 0 4px 16px #E07A5F33;
+  border: none;
+}
+
+.donate-card h3 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #26453E;
+}
+
+.donate-card.highlight h3 {
+  color: #fff;
+}
+
+.donate-card p {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #26453E;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.donate-card.highlight p {
+  color: #fff;
+}
+
+.donate-card .donate-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: #26453E;
+}
+
+.donate-card.highlight .donate-icon {
+  color: #fff;
+}
+
+.donate-card .btn-info,
+.donate-card .btn-accent {
+  margin-top: 0.5rem;
+  width: 90%;
+  max-width: 220px;
+  font-size: 1.08rem;
+  padding: 0.8rem 0;
+  border-radius: 0.7rem;
+  box-shadow: none;
+}
+
+.donate-card .btn-info {
+  background: #fff;
+  color: #26453E;
+  border: 1.5px solid #26453E;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.donate-card .btn-info:hover {
+  background: #26453E;
+  color: #fff;
+  border-color: #26453E;
+}
+
+.donate-card .btn-accent {
+  background: #fff;
+  color: #E07A5F;
+  border: none;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.donate-card .btn-accent:hover {
+  background: #D3684E;
+  color: #fff;
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -405,6 +539,8 @@
     flex-wrap: wrap;
   }
 }
+
+
 
 @media (max-width: 1100px) {
   .coexistence-content {
