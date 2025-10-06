@@ -513,6 +513,115 @@
   color: #fff;
 }
 
+footer {
+  background: #FAF9F6;
+  padding: 2.5rem 2rem 0 2rem;
+  position: relative;
+  min-height: 1px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.footer-content h4 {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #26453E;
+  margin-bottom: 0.7rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.footer-content a,
+.footer-content p {
+  color: #E07A5F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.footer-content form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.footer-content input[type="email"] {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #E07A5F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.footer-content button {
+  background: #fff;
+  color: #E07A5F;
+  border: 1px solid #E07A5F;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer-content button:hover {
+  background: #E07A5F;
+  color: #fff;
+}
+
+.footer-bottom {
+  background: #E07A5F;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #fff3;
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  width: 100vw;           /* Fill entire viewport width */
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.footer-bottom span {
+  font-family: 'Inter', Arial, sans-serif;
+  margin-right: auto;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: 0;
+}
+
+.social-icons a img {
+  height: 28px;
+  width: 28px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.social-icons a img:hover {
+  filter: brightness(0.8) invert(0.8);
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
