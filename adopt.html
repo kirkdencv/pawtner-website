@@ -400,21 +400,6 @@
       </div>
     </div>
   </footer>
-  <script>
-        document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
-        dropdown.querySelector('.dropdown-selected').onclick = function() {
-            dropdown.classList.toggle('open');
-        };
-        dropdown.querySelectorAll('.dropdown-item').forEach(function(item) {
-            item.onclick = function() {
-            dropdown.querySelector('.dropdown-selected').textContent = item.textContent;
-            dropdown.classList.remove('open');
-            };
-        });
-        document.addEventListener('click', function(e) {
-            if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
-        });
-        });
-    </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
