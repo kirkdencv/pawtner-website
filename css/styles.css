@@ -513,6 +513,213 @@
   color: #fff;
 }
 
+/* Adopt Page */
+.adopt-main {
+  background: linear-gradient(90deg, #F4E1D2 0%, #FAF9F6 100%);
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+.adopt-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0 1rem;
+}
+
+.adopt-sidebar {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px #D9CAB3;
+  padding: 1.5rem 1rem;
+  min-width: 220px;
+  max-width: 260px;
+  width: 100%;
+  margin-bottom: 2rem;
+  height: fit-content;
+}
+
+.adopt-main .pet-cards {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1rem;
+}
+
+.adopt-main .pet-card {
+  max-width: 315px;
+  min-width: 0;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.93rem;
+}
+
+.adopt-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.filter-group {
+  margin-bottom: 1.2rem;
+}
+
+.filter-group label {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  color: #26453E;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #E07A5F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  background: #fff;
+}
+
+.color-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.color-options label {
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  color: #3D3D3D;
+  margin-bottom: 0.1rem;
+  cursor: pointer;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-selected {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #E07A5F;
+  background: #fff;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 12px #D9CAB3;
+  z-index: 10;
+  border: 1px solid #E07A5F;
+}
+
+.custom-dropdown.open .dropdown-list {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #F8F6F2;
+}
+
+.color-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.color-dot.golden { background: #E5C99A; }
+.color-dot.brown { background: #7C4A1E; }
+.color-dot.gray { background: #B0B0B0; }
+.color-dot.black { background: #222; }
+.color-dot.red { background: #D94F4F; }
+.color-dot.bicolor { background: linear-gradient(90deg, #E5C99A 50%, #222 50%); }
+.color-dot.brindle { background: repeating-linear-gradient(45deg, #E5C99A, #7C4A1E 10px); }
+
+.btn-accent {
+  background: #E07A5F;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.7rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 4px 16px #E07A5F33;
+  transition: background 0.2s;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-accent:hover {
+  background: #D3684E;
+}
+
+.adopt-pet-cards {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center children horizontally */
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  align-self: center; /* Ensure pagination is centered in adopt-pet-cards */
+}
+
+.page-btn {
+  background: #fff;
+  color: #E07A5F;
+  border: 1px solid #E07A5F;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.page-btn.active,
+.page-btn:hover {
+  background: #E07A5F;
+  color: #fff;
+  border-color: #E07A5F;
+}
+
+/* Footer Styles */
 footer {
   background: #FAF9F6;
   padding: 2.5rem 2rem 0 2rem;
