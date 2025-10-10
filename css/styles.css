@@ -1626,6 +1626,169 @@ footer {
   margin-bottom: 0;
 }
 
+.application-main {
+  background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+.application-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  background: none;
+}
+
+.application-title {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.7rem;
+  color: #3D3D3D;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.01em;
+}
+
+.application-form-title {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2rem;
+  color: #E07A5F;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.application-note {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #81B29A;
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.application-form {
+  background: none;
+  border-radius: 1rem;
+  padding: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.application-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.application-field {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  margin-bottom: 0.2rem;
+}
+
+.application-field label {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #3D3D3D;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.application-field input,
+.application-field select,
+.application-field textarea {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid #E07A5F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  background: #fff;
+  resize: vertical;
+}
+
+.application-field textarea {
+  min-height: 70px;
+  max-height: 180px;
+}
+
+.application-radio-group {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.application-radio-group label {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  color: #3D3D3D;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.application-hint {
+  font-size: 0.93rem;
+  color: #81B29A;
+  margin-top: 0.1rem;
+}
+
+.required {
+  color: #E07A5F;
+  font-weight: bold;
+}
+
+.application-full {
+  flex: 1 1 100%;
+}
+
+.application-meeting {
+  flex: 1 1 100%;
+  margin-top: 1.2rem;
+}
+
+.application-meeting fieldset {
+  border: 1px solid #E07A5F;
+  border-radius: 0.7rem;
+  padding: 1rem 1.2rem;
+  background: #F8F6F2;
+}
+
+.application-meeting legend {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #26453E;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.application-meeting label {
+  margin-top: 0.7rem;
+}
+
+.application-actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-start;
+  margin-top: 1.2rem;
+}
+
+.application-actions .btn-accent {
+  min-width: 120px;
+}
+
+.application-actions .btn-info {
+  min-width: 120px;
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
