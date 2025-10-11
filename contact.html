@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Contact | Pawtner</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="img/pawtner_logo.png" alt="Pawtner Logo" />
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="adopt.html">Adopt</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html" class="active">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-section">
+      <!-- Left side: image and contact info -->
+      <div class="contact-info">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-desc">
+          Reach out to our team by selecting the type of service you need.
+        </p>
+        <img src="img/cat-dog.jpg" alt="Dog and Cat" class="contact-img" />
+        <div class="contact-card">
+          <p><span class="contact-icon">📍</span> Angeles, Pampanga</p>
+          <p><span class="contact-icon">📞</span> (+63) 999-360-6862</p>
+          <p><span class="contact-icon">✉️</span> PawtnerSupport@gmail.com</p>
+        </div>
+      </div>
+      <!-- Right side: contact form -->
+      <div class="contact-form-wrap">
+        <form class="contact-form">
+          <h3 class="contact-form-title">
+            <span class="contact-form-icon">🐾</span> Ready to help you
+          </h3>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your E-mail address" />
+          <label for="phone">Phone number</label>
+          <select id="phone" name="phone">
+            <option>US +1 (555) ...</option>
+            <option>PH +63 ...</option>
+            <!-- Add more country codes as needed -->
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your request"></textarea>
+          <button type="submit" class="btn-accent">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>How Can We Help?</h4>
+        <a href="adopt.html">Adopt a pet</a>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p><span class="footer-icon">📍</span> Angeles, Pampanga</p>
+        <p><span class="footer-icon">📞</span> (+63) 999-360-6862</p>
+        <p><span class="footer-icon">✉️</span> PawtnerSupport@gmail.com</p>
+      </div>
+      <div>
+        <h4>Keep In Touch With Us</h4>
+        <p class="muted">Join the Pawtner Community and be first to hear about news</p>
+        <form class="footer-subscribe" action="#" method="post" onsubmit="return false;">
+          <input type="email" placeholder="E-mail Address" aria-label="Email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy;2025 Pawtner.com</span>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><img src="img/icons/facebook.png" alt="Facebook" /></a>
+        <a href="#" aria-label="Pinterest"><img src="img/icons/pinterest.png" alt="Pinterest" /></a>
+        <a href="#" aria-label="Tumblr"><img src="img/icons/tumblr.png" alt="Tumblr" /></a>
+        <a href="#" aria-label="Instagram"><img src="img/icons/instagram.png" alt="Instagram" /></a>
+        <a href="#" aria-label="YouTube"><img src="img/icons/youtube.png" alt="YouTube" /></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

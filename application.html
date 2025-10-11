@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Pet Adoption Application | Pawtner</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="img/pawtner_logo.png" alt="Pawtner Logo" />
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="adopt.html">Adopt</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="application-main">
+    <section class="application-section">
+      <h1 class="application-title">PET ADOPTION APPLICATION</h1>
+      <h2 class="application-form-title">FORM</h2>
+      <p class="application-note">
+        Please note, all these details must be complete in order to apply for adopt a pet.
+      </p>
+      <form class="application-form">
+        <div class="application-row">
+          <div class="application-field">
+            <label for="address1">Address line 1 <span class="required">*</span></label>
+            <input type="text" id="address1" name="address1" placeholder="Line1" required />
+          </div>
+          <div class="application-field">
+            <label for="address2">Address line 2 <span class="required">*</span></label>
+            <input type="text" id="address2" name="address2" placeholder="Line2" required />
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label for="postcode">Postcode <span class="required">*</span></label>
+            <input type="text" id="postcode" name="postcode" placeholder="Postcode" required />
+          </div>
+          <div class="application-field">
+            <label for="town">Town <span class="required">*</span></label>
+            <input type="text" id="town" name="town" placeholder="Town/City" required />
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label for="landline">Telephone Number (either a landline or mobile number) <span class="required">*</span></label>
+            <input type="text" id="landline" name="landline" placeholder="Landline Telephone" required />
+          </div>
+          <div class="application-field">
+            <label for="mobile">Mobile</label>
+            <input type="text" id="mobile" name="mobile" placeholder="Mobile" />
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label>Do you have a garden?</label>
+            <div class="application-radio-group">
+              <label><input type="radio" name="garden" value="yes" required /> Yes</label>
+              <label><input type="radio" name="garden" value="no" /> No</label>
+            </div>
+          </div>
+          <div class="application-field">
+            <label for="living">Please describe your living/home situation</label>
+            <select id="living" name="living">
+              <option>Please Select</option>
+              <option>House</option>
+              <option>Apartment</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label for="household">Can you describe your household setting</label>
+            <select id="household" name="household">
+              <option>Please Select</option>
+              <option>Single</option>
+              <option>Family</option>
+              <option>Shared</option>
+            </select>
+          </div>
+          <div class="application-field">
+            <label for="activity">Can you describe the household's typical activity level</label>
+            <select id="activity" name="activity">
+              <option>Please Select</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label for="adults">Number of adults</label>
+            <input type="number" id="adults" name="adults" min="0" value="0" />
+            <span class="application-hint">At least one adult must be living in your household</span>
+          </div>
+          <div class="application-field">
+            <label for="children">Number of children <span class="required">*</span></label>
+            <input type="number" id="children" name="children" min="0" value="0" required />
+          </div>
+          <div class="application-field">
+            <label for="youngest">Age of youngest children</label>
+            <select id="youngest" name="youngest">
+              <option>Pick a value</option>
+              <option>0-2</option>
+              <option>3-6</option>
+              <option>7-12</option>
+              <option>13+</option>
+            </select>
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label>Any visiting children?</label>
+            <div class="application-radio-group">
+              <label><input type="radio" name="visiting_children" value="yes" /> Yes</label>
+              <label><input type="radio" name="visiting_children" value="no" /> No</label>
+            </div>
+          </div>
+          <div class="application-field">
+            <label for="ages_visiting">Ages of visiting children</label>
+            <select id="ages_visiting" name="ages_visiting">
+              <option>Please Select</option>
+              <option>0-2</option>
+              <option>3-6</option>
+              <option>7-12</option>
+              <option>13+</option>
+            </select>
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label>Do you have any flatmates or lodgers?</label>
+            <div class="application-radio-group">
+              <label><input type="radio" name="flatmates" value="yes" /> Yes</label>
+              <label><input type="radio" name="flatmates" value="no" /> No</label>
+            </div>
+          </div>
+          <div class="application-field">
+            <label>Does anyone in the household have any allergies to pets?</label>
+            <input type="text" name="allergies" placeholder="List allergies" />
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field">
+            <label>Are there any other animals at your home? <span class="required">*</span></label>
+            <div class="application-radio-group">
+              <label><input type="radio" name="other_animals" value="yes" required /> Yes</label>
+              <label><input type="radio" name="other_animals" value="no" /> No</label>
+            </div>
+          </div>
+          <div class="application-field">
+            <label>If yes, please state their species, age and gender</label>
+            <input type="text" name="other_animals_details" placeholder="Species, age, gender" />
+          </div>
+        </div>
+        <div class="application-row">
+          <div class="application-field application-full">
+            <label>Please describe your experience of any previous pet ownership and tell us about the type of home you plan to offer your new pet</label>
+            <textarea name="experience" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="application-row application-meeting">
+          <fieldset>
+            <legend>Choose the right time to meet</legend>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" />
+            <label for="time">Time</label>
+            <input type="time" id="time" name="time" />
+          </fieldset>
+        </div>
+        <div class="application-actions">
+          <button type="submit" class="btn-accent">Apply</button>
+          <button type="reset" class="btn-info">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>How Can We Help?</h4>
+        <a href="#">Adopt a pet</a>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p><span style="color:#E07A5F;">&#x1F4CD;</span> Angeles, Pampanga</p>
+        <p><span style="color:#E07A5F;">&#x260E;</span> (+63) 999-360-6862</p>
+        <p><span style="color:#E07A5F;">&#x2709;</span> PawtnerSupport@gmail.com</p>
+      </div>
+      <div>
+        <h4>Keep In Touch With Us</h4>
+        <p style="color:#E07A5F;">Join the Pawtner Community and be first to hear about news</p>
+        <form>
+          <input type="email" placeholder="E-mail Address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy;2025 Pawtner.com</span>
+      <div class="social-icons">
+        <a href="#"><img src="img/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="img/icons/pinterest.png" alt="Pinterest"></a>
+        <a href="#"><img src="img/icons/tumblr.png" alt="Tumblr"></a>
+        <a href="#"><img src="img/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="img/icons/youtube.png" alt="YouTube"></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
