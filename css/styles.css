@@ -2,6 +2,12 @@
 
 
 /* Hero Section Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #FAF9F6;
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -37,6 +43,28 @@
   color: #3D3D3D;
   font-size: 1.1rem;
   margin-bottom: 2rem;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navbar-toggle .bar {
+  width: 24px;
+  height: 3px;
+  background: #3D3D3D;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 .btn-accent {
@@ -480,6 +508,7 @@
   transition: box-shadow 0.2s;
 }
 
+
 .donate-card.highlight {
   background: #E07A5F;
   color: #fff;
@@ -510,14 +539,16 @@
   color: #fff;
 }
 
-.donate-card .donate-icon {
-  font-size: 2.2rem;
-  margin-bottom: 1.2rem;
-  color: #26453E;
+.donate-card .donate-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem auto;
 }
 
 .donate-card.highlight .donate-icon {
-  color: #fff;
+  filter: brightness(0) invert(1);
 }
 
 .donate-card .btn-info,
@@ -781,6 +812,15 @@ footer {
   gap: 2rem;
   margin-bottom: 0;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-content > div {
+  flex: 1 1 0;
+  min-width: 220px;
+  margin-bottom: 1.5rem;
 }
 
 .footer-content h4 {
@@ -793,7 +833,7 @@ footer {
 
 .footer-content a,
 .footer-content p {
-  color: #E07A5F;
+  color: #26453E;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -837,31 +877,35 @@ footer {
   background: #E07A5F;
   color: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid #fff3;
-  padding: 1rem 2.5rem;
+  padding: 1rem 0;
   font-size: 1.05rem;
   margin-top: 2rem;
-  width: 100vw;           /* Fill entire viewport width */
+  width: 100vw; /* Cover the whole bottom */
   left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
+  right: 0;
   position: relative;
+  bottom: 0;
   box-sizing: border-box;
   z-index: 100;
+  gap: 2rem;
+  transform: translateX(-50%);
 }
 
 .footer-bottom span {
   font-family: 'Inter', Arial, sans-serif;
-  margin-right: auto;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .social-icons {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-left: 0;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .social-icons a img {
@@ -2027,6 +2071,45 @@ footer {
   .hero-image img {
     max-width: 80px;
   }
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem 0.7rem;
+    position: relative;
+  }
+  .navbar-logo img {
+    height: 28px;
+  }
+  .navbar-toggle {
+    display: flex;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FAF9F6;
+    border-top: 1px solid #E5E5E5;
+    display: none;
+    z-index: 100;
+  }
+  .navbar-links.show {
+    display: flex;
+  }
+  .navbar-links li {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  .navbar-links a {
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    display: block;
+  }
+
   .pets {
     padding: 0.7rem 0.2rem;
   }
