@@ -1551,12 +1551,22 @@ footer {
   gap: 2rem;
 }
 
-.profile-header {
+/* Header Row */
+.profile-header-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 2rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
-  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.profile-header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .profile-greeting {
@@ -1566,7 +1576,7 @@ footer {
   font-weight: 600;
 }
 
-.profile-user {
+.profile-user-row {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -1585,36 +1595,60 @@ footer {
   font-size: 1.15rem;
   color: #E07A5F;
   font-weight: 700;
+  display: block;
 }
 
 .profile-id {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 0.98rem;
   color: #3D3D3D;
+  display: block;
 }
 
 .profile-adopt-btn {
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.25rem;
-  padding: 0.9rem 3rem;
-  border-radius: 2rem;
+  margin-left: 13rem;   /* This creates a gap between the left column and the button */
+  margin-right: 0;       /* No extra space on the right */
+  font-size: 1.35rem;
+  padding: 1.1rem 3.5rem;
+  border-radius: 2.2rem;
   box-shadow: 0 4px 16px #E07A5F33;
-  font-family: 'Poppins', Arial, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  background: #E07A5F;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.profile-adopt-btn:hover {
+  background: #D3684E;
+}
+
+.profile-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
 .profile-location {
-  display: flex;
-  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1rem;
   color: #26453E;
-  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
   gap: 0.4rem;
 }
 
+.location-icon {
+  color: #E07A5F;
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+/* Gallery Row */
 .profile-gallery-row {
   display: flex;
   gap: 2rem;
@@ -1625,40 +1659,45 @@ footer {
 .profile-gallery-main {
   position: relative;
   flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .profile-main-img {
   width: 100%;
-  max-width: 540px;
+  max-width: 800px;
   aspect-ratio: 16/7;
   object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px #D9CAB3;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 16px #D9CAB3;
+  display: block;
 }
 
 .profile-favorite-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.2rem;
+  right: 1.2rem;
   background: #fff;
   border: none;
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: #E07A5F;
   border-radius: 50%;
   box-shadow: 0 2px 8px #D9CAB3;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 
 .profile-story-card {
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 2px 12px #D9CAB3;
-  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  padding: 1.2rem;
   max-width: 340px;
   font-family: 'Inter', Arial, sans-serif;
   color: #26453E;
@@ -1681,6 +1720,7 @@ footer {
   line-height: 1.5;
 }
 
+/* Gallery Thumbnails */
 .profile-gallery-thumbs {
   display: flex;
   gap: 1rem;
@@ -1702,6 +1742,7 @@ footer {
   border: 2px solid #E07A5F;
 }
 
+/* Features List */
 .profile-features {
   margin-bottom: 2rem;
 }
@@ -1726,9 +1767,10 @@ footer {
 
 .feature-icon {
   font-size: 1.3rem;
-  color: #E07A5F;
+  color: #247158;
 }
 
+/* Similar Pets Section */
 .profile-similar-section {
   margin-top: 2rem;
 }
@@ -1739,14 +1781,17 @@ footer {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
-  text-align: left;
+  text-align: center;
 }
 
 .profile-similar-section .pet-cards {
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 
 .application-main {
   background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);

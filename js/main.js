@@ -104,3 +104,15 @@ document.querySelectorAll('.favorite-icon').forEach(function(icon) {
   });
 });
 
+document.querySelectorAll('.profile-favorite-btn, .favorite-icon').forEach(function(icon) {
+  icon.addEventListener('click', function() {
+    icon.classList.toggle('favorited');
+    icon.innerHTML = icon.classList.contains('favorited') ? '&#10084;' : '&#9825;';
+  });
+});
+
+document.querySelectorAll('.profile-gallery-thumbs img').forEach(function(thumb) {
+  thumb.addEventListener('click', function() {
+    document.querySelector('.profile-main-img').src = thumb.src;
+  });
+});
