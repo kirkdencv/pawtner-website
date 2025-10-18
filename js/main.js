@@ -1,3 +1,7 @@
+//Index Page
+
+
+// Adopt Page
 document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
   const selected = dropdown.querySelector('.dropdown-selected');
   const items = dropdown.querySelectorAll('.dropdown-item');
@@ -18,11 +22,11 @@ document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
   });
 });
 
+// Hamburger
 document.querySelector('.navbar-toggle').onclick = function() {
   document.querySelector('.navbar-links').classList.toggle('show');
 };
 
-// ...existing code...
 
 // Pagination interaction
 document.querySelectorAll('.pagination .page-btn').forEach(function(btn) {
@@ -69,3 +73,34 @@ document.addEventListener('DOMContentLoaded', function() {
   const firstActive = document.querySelector('.pagination .page-btn.active');
   if (firstActive) firstActive.click();
 });
+
+// Show more pets interaction
+document.addEventListener('DOMContentLoaded', function() {
+  const seeMoreBtn = document.querySelector('.see-more');
+  const petCards = document.querySelectorAll('.pet-card');
+  const initialCount = 3; // Show 3 by default
+  let showing = initialCount;
+
+  // Hide extra cards initially
+  petCards.forEach((card, i) => {
+    if (i >= initialCount) card.style.display = 'none';
+  });
+
+  if (seeMoreBtn) {
+    seeMoreBtn.addEventListener('click', function() {
+      for (let i = showing; i < petCards.length; i++) {
+        petCards[i].style.display = 'block';
+      }
+      seeMoreBtn.style.display = 'none';
+    });
+  }
+});
+
+// Favorite icon toggle
+document.querySelectorAll('.favorite-icon').forEach(function(icon) {
+  icon.addEventListener('click', function() {
+    icon.classList.toggle('favorited');
+    icon.innerHTML = icon.classList.contains('favorited') ? '&#10084;' : '&#9825;';
+  });
+});
+

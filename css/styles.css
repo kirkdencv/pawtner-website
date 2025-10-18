@@ -287,6 +287,37 @@ body, html {
   word-break: break-word;
 }
 
+.favorite-icon.favorited {
+  color: #E07A5F;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.favorite-icon {
+  cursor: pointer;
+}
+
+.see-more {
+  background: #E07A5F;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.7rem 2rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2rem auto 0 auto;
+  display: block;
+  box-shadow: 0 2px 8px #e07a5f33;
+  transition: background 0.2s, color 0.2s;
+}
+
+.see-more:hover,
+.see-more:focus {
+  background: #d3684e;
+  color: #fff;
+}
+
 .btn-info {
   background: #fff;
   color: #E07A5F;
