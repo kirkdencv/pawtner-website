@@ -2,6 +2,12 @@
 
 
 /* Hero Section Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #FAF9F6;
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -37,6 +43,28 @@
   color: #3D3D3D;
   font-size: 1.1rem;
   margin-bottom: 2rem;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.navbar-toggle .bar {
+  width: 24px;
+  height: 3px;
+  background: #3D3D3D;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 .btn-accent {
@@ -109,7 +137,7 @@
 
 /* --- Pets Section Styles --- */
 .pets {
-  background: linear-gradient(180deg, #FAF9F6 60%, #F4E1D2 100%);
+  background: linear-gradient(180deg, #FAF9F6 20%, #D9CAB3 100%);
   padding: 2.5rem 2rem;
   text-align: center;
 }
@@ -284,69 +312,111 @@
 /* Coexistence Section - Home Styles */
 
 .coexistence {
-  background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);
-  padding: 3rem 2rem 3rem 2rem;
+  background: linear-gradient(180deg, #FAF9F6 10%, #D9CAB3 100%);
+  padding: 4rem 2rem 4rem 2rem;
   text-align: center;
 }
 
 .coexistence h2 {
   font-family: 'Poppins', Arial, sans-serif;
-  font-size: 2rem;
-  color: #3D3D3D;
-  margin-bottom: 1.2rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
 }
 
 .coexistence-accent {
-  color: #81B29A;
+  color: #247158;
   font-family: 'Poppins', Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   display: block;
   margin-top: 0.2rem;
+  letter-spacing: 0.01em;
 }
 
 .coexistence-content {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
-  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0;
+  margin-top: 2.5rem;
+  min-height: unset;
+  position: relative;
 }
 
 .coexistence-img-wrap {
-  flex: 0 0 400px;
+  flex: 0 0 520px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  min-width: 400px;
+  max-width: 520px;
+  margin-right: 0;
+  position: relative;
+  height: 100%;
+}
+
+.coexistence-heading-overlay {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.coexistence-heading-overlay h2 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #222;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.coexistence-heading-overlay .coexistence-accent {
+  color: #247158;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.2rem;
+  letter-spacing: 0.01em;
 }
 
 .coexistence-img {
-  max-width: 340px;
   width: 100%;
+  max-width: 400px;
   height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 
 .coexistence-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 0.5rem 0.5rem; /* much smaller gap between cards */
-  margin-top: 0;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 620px;
+  margin-left: 2.5rem;
   justify-items: stretch;
   align-items: stretch;
-  flex: 1 1 480px;
 }
 
 .co-card {
   background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px #D9CAB3;
-  padding: 1rem 1rem 0.8rem 1rem; /* tighter padding */
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px #D9CAB3;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
   text-align: left;
   min-width: 0;
-  max-width: 320px;
+  max-width: 100%;
   width: 100%;
   height: 100%;
   position: relative;
@@ -355,6 +425,7 @@
   justify-content: flex-start;
   box-sizing: border-box;
   word-break: break-word;
+  margin: 0.5rem;
 }
 
 .co-card-title {
@@ -362,26 +433,30 @@
   font-family: 'Poppins', Arial, sans-serif;
   font-size: 1.08rem;
   font-weight: 600;
-  margin-bottom: 0.7rem; /* more space below title */
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.01em;
 }
 
 .co-card p {
   font-family: 'Inter', Arial, sans-serif;
-  color: #3D3D3D;
+  color: #222;
   font-size: 1rem;
-  margin-bottom: 1.2rem; /* more space above icon */
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
   flex: 1 1 auto;
   word-break: break-word;
   display: block;
 }
 
 .co-card-icon {
-  margin-top: 0;
-  width: 40px;
+  width: 48px;
   height: auto;
   opacity: 0.7;
   align-self: flex-start;
+  margin-top: auto;
+  margin-bottom: 0.2rem;
 }
+
 
 .donate {
   background: linear-gradient(180deg, #FAF9F6 60%, #D9CAB3 100%);
@@ -433,6 +508,7 @@
   transition: box-shadow 0.2s;
 }
 
+
 .donate-card.highlight {
   background: #E07A5F;
   color: #fff;
@@ -463,14 +539,16 @@
   color: #fff;
 }
 
-.donate-card .donate-icon {
-  font-size: 2.2rem;
-  margin-bottom: 1.2rem;
-  color: #26453E;
+.donate-card .donate-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem auto;
 }
 
 .donate-card.highlight .donate-icon {
-  color: #fff;
+  filter: brightness(0) invert(1);
 }
 
 .donate-card .btn-info,
@@ -734,6 +812,15 @@ footer {
   gap: 2rem;
   margin-bottom: 0;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-content > div {
+  flex: 1 1 0;
+  min-width: 220px;
+  margin-bottom: 1.5rem;
 }
 
 .footer-content h4 {
@@ -746,7 +833,7 @@ footer {
 
 .footer-content a,
 .footer-content p {
-  color: #E07A5F;
+  color: #26453E;
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1rem;
   text-decoration: none;
@@ -790,31 +877,35 @@ footer {
   background: #E07A5F;
   color: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-top: 1px solid #fff3;
-  padding: 1rem 2.5rem;
+  padding: 1rem 0;
   font-size: 1.05rem;
   margin-top: 2rem;
-  width: 100vw;           /* Fill entire viewport width */
+  width: 100vw; /* Cover the whole bottom */
   left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
+  right: 0;
   position: relative;
+  bottom: 0;
   box-sizing: border-box;
   z-index: 100;
+  gap: 2rem;
+  transform: translateX(-50%);
 }
 
 .footer-bottom span {
   font-family: 'Inter', Arial, sans-serif;
-  margin-right: auto;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
 }
 
 .social-icons {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-left: 0;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .social-icons a img {
@@ -1789,72 +1880,323 @@ footer {
   min-width: 120px;
 }
 
-@media (max-width: 900px) {
+/* Desktop: up to 1280px */
+@media (max-width: 1280px) {
   .hero {
     flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
     gap: 2rem;
+    padding: 2rem 1rem;
   }
   .hero-content {
     max-width: 100%;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
   }
   .hero-image img {
-    margin-top: 2rem;
     max-width: 260px;
   }
-  .navbar {
+  .pets {
+    padding: 2rem 1rem;
+  }
+  .pet-cards {
+    gap: 1.2rem;
+  }
+  .pet-card {
+    max-width: 260px;
+    min-width: 180px;
+  }
+  .coexistence {
+    padding: 2.5rem 1rem 2.5rem 1rem;
+  }
+  .coexistence-content {
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  .coexistence-img-wrap {
+    max-width: 260px;
+  }
+  .coexistence-img {
+    max-width: 220px;
+  }
+  .coexistence-cards {
+    gap: 1.2rem;
+    margin-left: 1rem;
+  }
+  .co-card {
+    max-width: 260px;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .co-card-icon {
+    width: 40px;
+  }
+  .donate-options {
+    gap: 1.2rem;
+  }
+  .donate-card {
+    max-width: 260px;
+    padding: 1.2rem 1rem;
+  }
+  .footer-content {
+    gap: 1.2rem;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
   }
-  .navbar-links {
-    gap: 1rem;
-    flex-wrap: wrap;
+  .footer-bottom {
+    padding: 1rem 1rem;
+    font-size: 1rem;
   }
 }
 
-
-
-@media (max-width: 1100px) {
+/* Tablet: up to 768px */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  .hero-image img {
+    max-width: 140px;
+  }
+  .pets {
+    padding: 1.2rem 0.5rem;
+  }
+  .pets h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .pet-cards {
+    gap: 0.7rem;
+  }
+  .pet-card {
+    max-width: 160px;
+    min-width: 120px;
+    font-size: 0.9rem;
+  }
+  .coexistence {
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  }
   .coexistence-content {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.2rem;
+    margin-top: 1.2rem;
   }
   .coexistence-img-wrap {
-    max-width: 220px;
-    margin-bottom: 1.5rem;
+    width: 100vw;
+    max-width: 160px;
+    margin-bottom: 1rem;
+  }
+  .coexistence-img {
+    width: 100vw;
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  .coexistence-heading-overlay {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    pointer-events: none;
+  }
+  .coexistence-heading-overlay h2 {
+    font-size: 1.5rem;
+  }
+  .coexistence-heading-overlay .coexistence-accent {
+    font-size: 1.1rem;
+  }
+  .coexistence-cards {
+    max-width: 340px;
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+  .co-card {
+    padding: 1rem;
+    margin: 0.15rem;
+  }
+  .co-card-title {
+    font-size: 0.95rem;
+  }
+  .co-card-icon {
+    width: 24px;
+  }
+  .donate-options {
+    gap: 0.7rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .donate-card {
+    max-width: 160px;
+    padding: 1rem 0.7rem;
+    font-size: 0.95rem;
+  }
+  .footer-content {
+    gap: 0.7rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.95rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile: up to 480px */
+@media (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.7rem 0.2rem;
+  }
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 1.1rem;
+  }
+  .hero-image img {
+    max-width: 80px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem 0.7rem;
+    position: relative;
+  }
+  .navbar-logo img {
+    height: 28px;
+  }
+  .navbar-toggle {
+    display: flex;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FAF9F6;
+    border-top: 1px solid #E5E5E5;
+    display: none;
+    z-index: 100;
+  }
+  .navbar-links.show {
+    display: flex;
+  }
+  .navbar-links li {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  .navbar-links a {
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    display: block;
+  }
+
+  .pets {
+    padding: 0.7rem 0.2rem;
+  }
+  .pets h2 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .pet-cards {
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pet-card {
+    max-width: 100%;
+    min-width: 80px;
+    font-size: 0.85rem;
+  }
+  .coexistence {
+    padding: 1rem 0.2rem 1rem 0.2rem;
+  }
+  .coexistence-content {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  .coexistence-img-wrap {
+    width: 100vw;
+    max-width: 90px;
+    margin-bottom: 0.5rem;
+  }
+  .coexistence-img {
+    width: 100vw;
+    max-width: 90px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  .coexistence-heading-overlay {
+    position: static;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.7rem;
+    pointer-events: none;
+  }
+  .coexistence-heading-overlay h2 {
+    font-size: 1rem;
+  }
+  .coexistence-heading-overlay .coexistence-accent {
+    font-size: 0.8rem;
   }
   .coexistence-cards {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: 0.7rem;
-    width: 100%;
-  }
-  .co-card {
     max-width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 600px) {
-  .coexistence {
-    padding: 1.5rem 0.5rem;
-  }
-  .coexistence-img {
-    max-width: 140px;
+    gap: 0.4rem;
+    margin-left: 0;
   }
   .co-card {
-    padding: 0.7rem 0.7rem 0.7rem 0.7rem;
-    font-size: 0.95rem;
+    padding: 0.7rem;
+    margin: 0.1rem;
   }
   .co-card-title {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   .co-card-icon {
-    width: 28px;
+    width: 16px;
+  }
+  .donate-options {
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .donate-card {
+    max-width: 100%;
+    padding: 0.7rem 0.3rem;
+    font-size: 0.9rem;
+  }
+  .footer-content {
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 }

@@ -17,3 +17,7 @@ document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
     if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
   });
 });
+
+document.querySelector('.navbar-toggle').onclick = function() {
+  document.querySelector('.navbar-links').classList.toggle('show');
+};
