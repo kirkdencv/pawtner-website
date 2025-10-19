@@ -3,62 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Contact | Pawtner</title>
+  <title>Contact Us | Pawtner</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <!-- Navbar -->
   <header>
-        <nav class="navbar">
-          <div class="navbar-logo">
-            <img src="img/pawtner_logo.png" alt="Pawtner Logo" />
-          </div>
-          <button class="navbar-toggle" aria-label="Open menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-          <ul class="navbar-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="adopt.html">Adopt</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-          </ul>
-        </nav>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="img/pawtner_logo.png" alt="Pawtner Logo" />
+      </div>
+      <button class="navbar-toggle" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="adopt.html">Adopt</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="contact-main">
     <section class="contact-section">
-      <!-- Left side: image and contact info -->
+      <!-- Left: Info and Image -->
       <div class="contact-info">
-        <h2 class="contact-title">Contact Us</h2>
-        <p class="contact-desc">
+        <div class="contact-title">Contact Us</div>
+        <div class="contact-desc">
           Reach out to our team by selecting the type of service you need.
-        </p>
-        <img src="img/cat-dog.jpg" alt="Dog and Cat" class="contact-img" />
+        </div>
+        <img class="contact-img" src="img/cat-dog.jpg" alt="Cat and Dog" />
         <div class="contact-card">
-          <p><span class="contact-icon"><img src="img/icons/pin.png" alt="location"/></span> <a href="https://maps.google.com/?q=Angeles,Pampanga" target="_blank" rel="noopener">Angeles, Pampanga</a></p>
-          <p><span class="contact-icon"><img src="img/icons/telephone.png" alt="number"/></span> <a href="tel:+639993606862">(+63) 999-360-6862</a></p>
-          <p><span class="contact-icon"><img src="img/icons/email.png" alt="email"/></span> <a href="mailto:PawtnerSupport@gmail.com">PawtnerSupport@gmail.com</a></p>
+          <p>
+            <span class="contact-icon">
+              <img src="img/icons/pin.png" alt="Location" class="location-img-icon" />
+            </span>
+            Angeles, Pampanga
+          </p>
+          <p>
+            <span class="contact-icon">
+              <img src="img/icons/telephone.png" alt="Phone" />
+            </span>
+            (+63) 999-360-6862
+          </p>
+          <p>
+            <span class="contact-icon">
+              <img src="img/icons/email.png" alt="Email" />
+            </span>
+            PawtnerSupport@gmail.com
+          </p>
         </div>
       </div>
-      <!-- Right side: contact form -->
+      <!-- Right: Contact Form -->
       <div class="contact-form-wrap">
         <form class="contact-form">
-          <h3 class="contact-form-title">
-            <span class="contact-form-icon"><img src="img/icons/paw.png"/></span> Ready to help you
-          </h3>
+          <div class="contact-form-title">
+            <span class="contact-form-icon"><img src="img/icons/paw.png" /></span>
+            Ready to help you
+          </div>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" />
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your E-mail address" />
-            <label for="phone">Phone number</label>
-            <input type="text" id="phone" name="phone" placeholder="PH +63" />
-            <!-- Add more country codes as needed -->
-          </select>
+          <input type="email" id="email" name="email" placeholder="Your E-mail address" required />
+
+          <label for="phone">Phone number</label>
+          <input type="text" id="phone" name="phone" placeholder="e.g. +63 999-360-6862" />
+
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Tell us about your request"></textarea>
+          <textarea id="message" name="message" placeholder="Tell us about your request" required></textarea>
+
           <button type="submit" class="btn-accent">Send</button>
         </form>
       </div>
@@ -74,9 +92,15 @@
       </div>
       <div>
         <h4>Contact Us</h4>
-        <p><a href="https://maps.google.com/?q=Angeles,Pampanga" target="_blank" rel="noopener">Angeles, Pampanga</a></p>
-        <p><a href="tel:+639993606862">+63 999-360-6862</a></p>
-        <p><a href="mailto:PawtnerSupport@gmail.com">PawtnerSupport@gmail.com</a></p>
+        <p>
+          <a href="https://maps.google.com/?q=Angeles,Pampanga" target="_blank" rel="noopener">Angeles, Pampanga</a>
+        </p>
+        <p>
+          <a href="tel:+639993606862">+63 999-360-6862</a>
+        </p>
+        <p>
+          <a href="mailto:PawtnerSupport@gmail.com">PawtnerSupport@gmail.com</a>
+        </p>
       </div>
       <div>
         <h4>Keep In Touch With Us</h4>
@@ -97,6 +121,5 @@
     </div>
   </footer>
   <script src="js/main.js"></script>
-
 </body>
 </html>
