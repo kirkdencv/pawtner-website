@@ -1806,6 +1806,13 @@ footer {
   background: none;
 }
 
+.application-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  background: none;
+}
+
 .application-title {
   font-family: 'Poppins', Arial, sans-serif;
   font-size: 2.7rem;
@@ -1835,28 +1842,45 @@ footer {
 }
 
 .application-form {
-  background: none;
-  border-radius: 1rem;
-  padding: 0;
-  box-shadow: none;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2.5rem; /* Increase gap between rows */
 }
 
 .application-row {
   display: flex;
   gap: 1.2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0; /* Remove margin-bottom here, use gap in parent */
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .application-field {
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  min-width: 180px;
+  min-width: 220px;
+  margin-bottom: 0; /* No extra margin */
+}
+
+.application-field input,
+.application-field select,
+.application-field textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px solid #E07A5F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
   margin-bottom: 0.2rem;
+  background: #fff;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.application-field textarea {
+  min-height: 70px;
+  max-height: 180px;
 }
 
 .application-field label {
@@ -1865,25 +1889,6 @@ footer {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.2rem;
-}
-
-.application-field input,
-.application-field select,
-.application-field textarea {
-  width: 100%;
-  padding: 0.6rem 0.9rem;
-  border-radius: 0.5rem;
-  border: 1px solid #E07A5F;
-  font-family: 'Inter', Arial, sans-serif;
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-  background: #fff;
-  resize: vertical;
-}
-
-.application-field textarea {
-  min-height: 70px;
-  max-height: 180px;
 }
 
 .application-radio-group {
@@ -1918,43 +1923,160 @@ footer {
 }
 
 .application-meeting {
-  flex: 1 1 100%;
-  margin-top: 1.2rem;
+  background: #F4E1D2;
+  border-radius: 1rem;
+  border: 1px solid #E5E5E5;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 12px #D9CAB333;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .application-meeting fieldset {
-  border: 1px solid #E07A5F;
-  border-radius: 0.7rem;
-  padding: 1rem 1.2rem;
-  background: #F8F6F2;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: none;
 }
 
 .application-meeting legend {
   font-family: 'Poppins', Arial, sans-serif;
-  color: #26453E;
-  font-size: 1.08rem;
+  color: #222;
+  font-size: 1.18rem;
   font-weight: 600;
-  margin-bottom: 0.7rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
 }
 
 .application-meeting label {
-  margin-top: 0.7rem;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #222;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.application-meeting input[type="date"],
+.application-meeting input[type="time"] {
+  width: 100%;
+  padding: 0.9rem 1.2rem 0.9rem 2.5rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #888;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.08rem;
+  background: #fff;
+  margin-bottom: 1.2rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.application-meeting input[type="date"]::-webkit-calendar-picker-indicator,
+.application-meeting input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.5);
+}
+
+.application-meeting .application-actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+  padding-left: 0;
+}
+
+.application-meeting .btn-accent {
+  background: #E07A5F;
+  color: #fff;
+  border-radius: 0.7rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.application-meeting .btn-accent:hover {
+  background: #D3684E;
+}
+
+.application-meeting .btn-info {
+  background: #fff;
+  color: #888;
+  border: 1.5px solid #E5E5E5;
+  border-radius: 0.7rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.application-meeting .btn-info:hover {
+  background: #E5E5E5;
+  color: #222;
 }
 
 .application-actions {
   display: flex;
   gap: 1.2rem;
-  justify-content: flex-start;
-  margin-top: 1.2rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+  padding-left: 1rem;
 }
 
 .application-actions .btn-accent {
-  min-width: 120px;
+  background: #D96F53;
+  color: #fff;
+  border-radius: 0.7rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 140px;
+}
+
+.application-actions .btn-accent:hover {
+  background: #E07A5F;
 }
 
 .application-actions .btn-info {
-  min-width: 120px;
+  background: #fff;
+  color: #888;
+  border: 1.5px solid #E5E5E5;
+  border-radius: 0.7rem;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.8rem 2.2rem;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  min-width: 140px;
 }
+
+.application-actions .btn-info:hover {
+  background: #E5E5E5;
+  color: #222;
+  border-color: #BDBDBD;
+}
+
 
 /* Desktop: up to 1280px */
 @media (max-width: 1280px) {
