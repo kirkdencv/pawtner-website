@@ -47,39 +47,66 @@ document.querySelectorAll('.profile-gallery-thumbs img').forEach(function(thumb)
   });
 });
 
-// --- PAGINATION (Adopt Page) ---
-document.querySelectorAll('.pagination .page-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.pagination .page-btn').forEach(b => b.classList.remove('active'));
-    if (!isNaN(parseInt(btn.textContent))) btn.classList.add('active');
-    // Show pet cards for selected page (demo logic)
-    const page = parseInt(btn.textContent);
-    const petCards = document.querySelectorAll('.pet-card');
-    const perPage = 6;
-    let start = isNaN(page) ? 0 : (page - 1) * perPage;
-    petCards.forEach((card, i) => {
-      card.style.display = (i >= start && i < start + perPage) ? 'block' : 'none';
+// --- PAGINATION & SEE MORE: Always show all pet cards and pagination on mobile ---
+document.addEventListener('DOMContentLoaded', function() {
+  const pageBtns = document.querySelectorAll('.pagination .page-btn');
+  const petCards = document.querySelectorAll('.pet-card');
+  const seeMoreBtn = document.querySelector('.see-more');
+  const perPage = 6;
+
+  function isMobile() {
+    return window.innerWidth <= 480;
+  }
+
+  function updatePetCardsAndPagination() {
+    if (isMobile()) {
+      // Show all pet cards
+      petCards.forEach(card => card.style.display = 'flex');
+      // Show pagination
+      if (pageBtns.length) {
+        pageBtns.forEach(btn => btn.style.display = 'inline-block');
+        // Optionally, highlight the first page as active
+        pageBtns.forEach(btn => btn.classList.remove('active'));
+        if (pageBtns[0]) pageBtns[0].classList.add('active');
+      }
+      // Hide see more button
+      if (seeMoreBtn) seeMoreBtn.style.display = 'none';
+    } else {
+      // Desktop/tablet: paginate
+      let activeIdx = Array.from(pageBtns).findIndex(b => b.classList.contains('active'));
+      if (activeIdx === -1) activeIdx = 0;
+      petCards.forEach((card, i) => {
+        card.style.display = (i >= activeIdx * perPage && i < (activeIdx + 1) * perPage) ? 'flex' : 'none';
+      });
+      if (pageBtns.length) pageBtns.forEach(btn => btn.style.display = 'inline-block');
+      if (seeMoreBtn) seeMoreBtn.style.display = 'block';
+    }
+  }
+
+  // Pagination button click
+  pageBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', function() {
+      if (!isMobile()) {
+        pageBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        updatePetCardsAndPagination();
+      }
     });
   });
-});
-document.addEventListener('DOMContentLoaded', function() {
-  const firstActive = document.querySelector('.pagination .page-btn.active');
-  if (firstActive) firstActive.click();
-});
 
-// --- SEE MORE PETS ---
-document.addEventListener('DOMContentLoaded', function() {
-  const seeMoreBtn = document.querySelector('.see-more');
-  const petCards = document.querySelectorAll('.pet-card');
-  const initialCount = 3;
-  let showing = initialCount;
-  petCards.forEach((card, i) => { if (i >= initialCount) card.style.display = 'none'; });
+  // See more button click (desktop only)
   if (seeMoreBtn) {
     seeMoreBtn.addEventListener('click', function() {
-      for (let i = showing; i < petCards.length; i++) petCards[i].style.display = 'block';
-      seeMoreBtn.style.display = 'none';
+      if (!isMobile()) {
+        petCards.forEach(card => card.style.display = 'flex');
+        seeMoreBtn.style.display = 'none';
+      }
     });
   }
+
+  // Initial and responsive update
+  updatePetCardsAndPagination();
+  window.addEventListener('resize', updatePetCardsAndPagination);
 });
 
 // --- CUSTOM DROPDOWN (Adopt Page) ---
@@ -214,3 +241,34 @@ document.querySelectorAll('form').forEach(form => {
   if (firstInput) firstInput.focus();
 });
 
+// --- Adopt Page: Mobile Filter Sidebar Toggle ---
+document.addEventListener('DOMContentLoaded', function() {
+  const filterToggle = document.querySelector('.adopt-filter-toggle');
+  const sidebar = document.querySelector('.adopt-sidebar');
+  const sidebarClose = document.querySelector('.adopt-sidebar-close');
+
+  if (filterToggle && sidebar) {
+    filterToggle.addEventListener('click', function() {
+      sidebar.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  if (sidebarClose && sidebar) {
+    sidebarClose.addEventListener('click', function() {
+      sidebar.classList.remove('show');
+      document.body.style.overflow = '';
+    });
+  }
+  // Optional: close sidebar when clicking outside
+  document.addEventListener('click', function(e) {
+    if (
+      sidebar &&
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(e.target) &&
+      !e.target.classList.contains('adopt-filter-toggle')
+    ) {
+      sidebar.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+});
