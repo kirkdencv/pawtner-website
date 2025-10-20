@@ -48,7 +48,7 @@ document.querySelectorAll('.profile-gallery-thumbs img').forEach(function(thumb)
 });
 
 // --- PAGINATION & SEE MORE: Always show all pet cards and pagination on mobile ---
-document.addEventListener('DOMContentLoaded', function() {
+function updatePetCardsAndPagination() {
   const pageBtns = document.querySelectorAll('.pagination .page-btn');
   const petCards = document.querySelectorAll('.pet-card');
   const seeMoreBtn = document.querySelector('.see-more');
@@ -58,52 +58,53 @@ document.addEventListener('DOMContentLoaded', function() {
     return window.innerWidth <= 480;
   }
 
-  function updatePetCardsAndPagination() {
-    if (isMobile()) {
-      // Show all pet cards
-      petCards.forEach(card => card.style.display = 'flex');
-      // Show pagination
-      if (pageBtns.length) {
-        pageBtns.forEach(btn => btn.style.display = 'inline-block');
-        // Optionally, highlight the first page as active
-        pageBtns.forEach(btn => btn.classList.remove('active'));
-        if (pageBtns[0]) pageBtns[0].classList.add('active');
-      }
-      // Hide see more button
-      if (seeMoreBtn) seeMoreBtn.style.display = 'none';
-    } else {
-      // Desktop/tablet: paginate
-      let activeIdx = Array.from(pageBtns).findIndex(b => b.classList.contains('active'));
-      if (activeIdx === -1) activeIdx = 0;
-      petCards.forEach((card, i) => {
-        card.style.display = (i >= activeIdx * perPage && i < (activeIdx + 1) * perPage) ? 'flex' : 'none';
-      });
-      if (pageBtns.length) pageBtns.forEach(btn => btn.style.display = 'inline-block');
-      if (seeMoreBtn) seeMoreBtn.style.display = 'block';
+  if (isMobile()) {
+    // Show all pet cards
+    petCards.forEach(card => card.style.display = 'flex');
+    // Show pagination
+    if (pageBtns.length) {
+      pageBtns.forEach(btn => btn.style.display = 'inline-block');
+      pageBtns.forEach(btn => btn.classList.remove('active'));
+      if (pageBtns[0]) pageBtns[0].classList.add('active');
     }
-  }
-
-  // Pagination button click
-  pageBtns.forEach((btn, idx) => {
-    btn.addEventListener('click', function() {
-      if (!isMobile()) {
-        pageBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        updatePetCardsAndPagination();
-      }
+    // Hide see more button
+    if (seeMoreBtn) seeMoreBtn.style.display = 'none';
+  } else {
+    // Desktop/tablet: paginate
+    let activeIdx = Array.from(pageBtns).findIndex(b => b.classList.contains('active'));
+    if (activeIdx === -1) activeIdx = 0;
+    petCards.forEach((card, i) => {
+      card.style.display = (i >= activeIdx * perPage && i < (activeIdx + 1) * perPage) ? 'flex' : 'none';
     });
-  });
+    if (pageBtns.length) pageBtns.forEach(btn => btn.style.display = 'inline-block');
+    if (seeMoreBtn) seeMoreBtn.style.display = 'block';
+  }
+}
 
+// Pagination button click
+document.addEventListener('DOMContentLoaded', function() {
+  const pageBtns = document.querySelectorAll('.pagination .page-btn');
+  if (pageBtns.length) {
+    pageBtns.forEach((btn, idx) => {
+      btn.addEventListener('click', function() {
+        if (window.innerWidth > 480) {
+          pageBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          updatePetCardsAndPagination();
+        }
+      });
+    });
+  }
   // See more button click (desktop only)
+  const seeMoreBtn = document.querySelector('.see-more');
   if (seeMoreBtn) {
     seeMoreBtn.addEventListener('click', function() {
-      if (!isMobile()) {
-        petCards.forEach(card => card.style.display = 'flex');
+      if (window.innerWidth > 480) {
+        document.querySelectorAll('.pet-card').forEach(card => card.style.display = 'flex');
         seeMoreBtn.style.display = 'none';
       }
     });
   }
-
   // Initial and responsive update
   updatePetCardsAndPagination();
   window.addEventListener('resize', updatePetCardsAndPagination);
