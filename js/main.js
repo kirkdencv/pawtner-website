@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+
   // See more button click (desktop only)
   const seeMoreBtn = document.querySelector('.see-more');
   if (seeMoreBtn) {
@@ -221,8 +223,17 @@ document.querySelectorAll('button, a, input, select, textarea').forEach(el => {
 });
 
 document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('error', () => {
-    img.src = 'img/icons/image-placeholder.png';
+  img.addEventListener('error', function onError() {
+    // prevent infinite retry if placeholder fails
+    if (this.dataset.fallbackApplied) return;
+    this.dataset.fallbackApplied = '1';
+    // resolve placeholder relative to current page, fallback to literal if URL() fails
+    try {
+      this.src = new URL('img/icons/image-placeholder.png', location.href).href;
+    } catch (e) {
+      this.src = 'img/icons/image-placeholder.png';
+    }
+    this.removeEventListener('error', onError);
   });
 });
 
