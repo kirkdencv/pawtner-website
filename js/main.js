@@ -95,8 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
-
-
   // See more button click (desktop only)
   const seeMoreBtn = document.querySelector('.see-more');
   if (seeMoreBtn) {
